@@ -1,53 +1,40 @@
+let handPose;
+let video;
+let hands = [];
 
-// ==== variables ====
-
-
-function mousePressed() {
-  console.log("Mouse Pressed");
-  
+function preload() {
+  // Load the handPose model
+  handPose = ml5.handPose();
 }
-
-
-//  ==== setup ====
-
-
 
 function setup() {
   createCanvas(640, 480);
-  //createCanvas(windowWidth, windowHeight);
-  /*
-  var videoSettings = {
-    audio: false,
-    video: {
-      facingMode: {
-        exact: "environment"
-      }
-    },    
-    //video: {
-      //facingMode: "user"
-    //}, 
-    flipped: false,
-  };
-  */
-  
+  // Create the webcam video and hide it
+  video = createCapture(VIDEO);
+  video.size(640, 480);
+  video.hide();
+  // start detecting hands from the webcam video
+  handPose.detectStart(video, gotHands);
 }
-
-
-// ==== DRAW ====
 
 function draw() {
-  background(0);
+  // Draw the webcam video
+  image(video, 0, 0, width, height);
 
-  fill(127)
-  circle(320,240,50)
-  
+  // Draw all the tracked hand points
+  for (let i = 0; i < hands.length; i++) {
+    let hand = hands[i];
+    for (let j = 0; j < hand.keypoints.length; j++) {
+      let keypoint = hand.keypoints[j];
+      fill(0, 255, 0);
+      noStroke();
+      circle(keypoint.x, keypoint.y, 10);
+    }
+  }
 }
 
-// ==== STUFF ====
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+// Callback function for when handPose outputs data
+function gotHands(results) {
+  // save the output to the hands variable
+  hands = results;
 }
-
-
-
-
