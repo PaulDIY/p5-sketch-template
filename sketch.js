@@ -8,9 +8,9 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(640, 480);
+  //createCanvas(640, 480);
+  createCanvas(windowWidth, windowHeight);
   // Create the webcam video and hide it
-    //createCanvas(windowWidth, windowHeight);
   var videoSettings = {
     audio: false,
     video: {
@@ -24,15 +24,16 @@ function setup() {
     flipped: false,
   };
   video = createCapture(videoSettings);
-  video.size(640, 480);
+  //video.size(640, 480);
   video.hide();
   // start detecting hands from the webcam video
   handPose.detectStart(video, gotHands);
 }
 
 function draw() {
+  background(0)
   // Draw the webcam video
-  image(video, 0, 0, width, height);
+  //image(video, 0, 0, width, height);
 
   // Draw all the tracked hand points
   for (let i = 0; i < hands.length; i++) {
@@ -41,7 +42,7 @@ function draw() {
       let keypoint = hand.keypoints[j];
       fill(0, 255, 0);
       noStroke();
-      circle(keypoint.x, keypoint.y, 10);
+      circle(keypoint.x, keypoint.y, 20);
     }
   }
 }
