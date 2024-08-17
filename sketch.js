@@ -34,7 +34,7 @@ function draw() {
   background(150)
   // Draw the webcam video
   image(video, 0, 0, width, width * video.height / video.width);
-  //stroke(255,0,0)
+  stroke(255,0,0)
   rect(5,5, width-10,height-10)
   
   /*
