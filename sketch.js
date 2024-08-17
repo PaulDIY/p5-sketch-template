@@ -23,7 +23,7 @@ function setup() {
     //}, 
     flipped: false,
   };
-  video = createCapture(VIDEO, videoSettings);
+  video = createCapture(videoSettings);
   video.size(640, 480);
   video.hide();
   // start detecting hands from the webcam video
