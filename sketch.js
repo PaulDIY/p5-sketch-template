@@ -34,9 +34,11 @@ function draw() {
   background(150)
   // Draw the webcam video
   image(video, 0, 0, width, width * video.height / video.width);
-  stroke(255,0,0)
-  noFill()
-  //rect(5,5, width-10,height-10)
+  // draw red frame
+  stroke(255,0,0);
+  strokeWeight(5);
+  fill(0,0);
+  rect(5,5, width-10,height-10);
   
   /*
   // Draw all the tracked hand points
