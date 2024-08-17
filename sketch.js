@@ -39,7 +39,7 @@ function draw() {
   stroke(255,0,0);
   strokeWeight(frameWidth);
   fill(0,0);
-  rect(strokeWeight/2, strokeWeight/2, width-strokeWeight,height-strokeWeight);
+  rect(frameWidth/2, frameWidth/2, width-frameWidth,height-frameWidth);
   
   /*
   // Draw all the tracked hand points
