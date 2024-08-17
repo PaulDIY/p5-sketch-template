@@ -33,9 +33,10 @@ function setup() {
 function draw() {
   //background(0)
   // Draw the webcam video
-  //image(video, 0, 0, width, height);
+  //image(video, 0, 0, width, width * video.height / video.width);
   stroke(255,0,0)
-  rectangle(5,5, width-10,height-10)
+  rect(5,5, width-10,height-10)
+  
   /*
   // Draw all the tracked hand points
   for (let i = 0; i < hands.length; i++) {
