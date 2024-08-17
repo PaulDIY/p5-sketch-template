@@ -3,12 +3,7 @@
 
 
 function mousePressed() {
-  console.log("Faces:");
-  console.log(faces);
-  console.log("Poses:");
-  console.log(poses);
-  console.log("Segmentation:");
-  console.log(segmentation);
+  console.log("Mouse Pressed");
   
 }
 
@@ -43,6 +38,7 @@ function setup() {
 function draw() {
   background(0);
 
+  fill(127)
   circle(0,0,50)
   
 }
