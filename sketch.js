@@ -39,7 +39,7 @@ function draw() {
   background(0);
 
   fill(127)
-  circle(0,0,50)
+  circle(320,480,50)
   
 }
 
