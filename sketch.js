@@ -43,6 +43,7 @@ function draw() {
   background(150)
   // Draw the webcam video
   image(video, 0, 0, width, width * video.height / video.width);
+  filter(POSTERIZE, 8);
   // draw red frame
   stroke(255,0,0);
   strokeWeight(frameWidth);
