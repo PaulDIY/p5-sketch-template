@@ -1,6 +1,7 @@
 let handPose;
 let video;
 let hands = [];
+let frameWidth = 10;
 
 function preload() {
   // Load the handPose model
@@ -36,9 +37,9 @@ function draw() {
   image(video, 0, 0, width, width * video.height / video.width);
   // draw red frame
   stroke(255,0,0);
-  strokeWeight(5);
+  strokeWeight(frameWidth);
   fill(0,0);
-  rect(5,5, width-10,height-10);
+  rect(strokeWeight/2, strokeWeight/2, width-strokeWeight,height-strokeWeight);
   
   /*
   // Draw all the tracked hand points
