@@ -23,15 +23,15 @@ function setup() {
     //}, 
     flipped: false,
   };
-  video = createCapture(videoSettings);
+  //video = createCapture(videoSettings);
   //video.size(640, 480);
-  video.hide();
+  //video.hide();
   // start detecting hands from the webcam video
   //handPose.detectStart(video, gotHands);
 }
 
 function draw() {
-  background(0)
+  //background(0)
   // Draw the webcam video
   //image(video, 0, 0, width, height);
   stroke(255,0,0)
