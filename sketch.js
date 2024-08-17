@@ -36,7 +36,7 @@ function draw() {
   image(video, 0, 0, width, width * video.height / video.width);
   stroke(255,0,0)
   noFill()
-  rect(5,5, width-10,height-10)
+  //rect(5,5, width-10,height-10)
   
   /*
   // Draw all the tracked hand points
