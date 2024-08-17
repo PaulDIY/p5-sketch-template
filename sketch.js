@@ -4,7 +4,7 @@ let hands = [];
 
 function preload() {
   // Load the handPose model
-  handPose = ml5.handPose();
+  //handPose = ml5.handPose();
 }
 
 function setup() {
@@ -27,14 +27,14 @@ function setup() {
   //video.size(640, 480);
   video.hide();
   // start detecting hands from the webcam video
-  handPose.detectStart(video, gotHands);
+  //handPose.detectStart(video, gotHands);
 }
 
 function draw() {
   background(0)
   // Draw the webcam video
-  //image(video, 0, 0, width, height);
-
+  image(video, 0, 0, width, height);
+  /*
   // Draw all the tracked hand points
   for (let i = 0; i < hands.length; i++) {
     let hand = hands[i];
@@ -45,6 +45,7 @@ function draw() {
       circle(keypoint.x, keypoint.y, 20);
     }
   }
+  */
 }
 
 // Callback function for when handPose outputs data
